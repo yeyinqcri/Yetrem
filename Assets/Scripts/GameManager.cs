@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        foreach (Sprite o in Resources.LoadAll<Sprite>("Gallery"))
+            GalleryPictures.Add(o);
     }
 
     public void SetPictureToDraw(GameObject g)
@@ -35,5 +37,9 @@ public class GameManager : MonoBehaviour
     public int GetGallerySize()
     {
         return GalleryPictures.Count;
+    }
+    public List<Sprite> GetGalleryPictures()
+    {
+        return GalleryPictures;
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager_MainMenu : MonoBehaviour
 {
     public Animator MenuAnimator;
 
     public GameObject EmptyGalleryText;
+    public GameObject GalleryPicturesContainer;
+    public GameObject GalleryPictureTemplate;
 
     private LevelManager levelManager;
     private GameManager gameManager;
@@ -17,6 +20,21 @@ public class UIManager_MainMenu : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
 
         EmptyGalleryText.SetActive(gameManager.GetGallerySize() < 1);
+        float posX = 0;
+        foreach (Sprite s in gameManager.GetGalleryPictures())
+        {
+            GameObject instance = Instantiate(GalleryPictureTemplate, GalleryPicturesContainer.transform);
+            instance.GetComponent<Image>().sprite = s;
+            instance.transform.localPosition += new Vector3(posX,0f,0f);
+            instance.GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance); });
+            posX += 619f;
+        }
+    }
+
+    void TaskWithParameters(GameObject g)
+    {
+        SetPictureOnGameManager(g);
+        EnterGame();
     }
 
     public void EnterGallery()
