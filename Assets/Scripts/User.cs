@@ -7,6 +7,7 @@ public class User : MonoBehaviour
 {
     public GameObject paint;
     public Image eraserPanel;
+    public int maximumOverridePaint = 20;
     
 
     private Drawing drawing;
@@ -30,15 +31,28 @@ public class User : MonoBehaviour
 
         if (isDrawing)
         {
+            GameObject[] paintObjects = GameObject.FindGameObjectsWithTag("Paint");
             if (isErasing)
             {
-                foreach (GameObject p in GameObject.FindGameObjectsWithTag("Paint"))
+                foreach (GameObject p in paintObjects)
                 {
                     if (p.GetComponent<Paint>().IsTouchOver)
                         Destroy(p.gameObject);
                 }
                 return;
             }
+
+            int overPaint = 0;
+            foreach (GameObject p in paintObjects)
+            {
+                if (p.GetComponent<Paint>().IsTouchOver)
+                {
+                    overPaint++;
+                    if (overPaint > maximumOverridePaint)
+                        return;
+                }
+            }
+                
 
             Vector3 instancePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             instancePos.z = -2f;
