@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject PauseMenuPanel;
+
     private LevelManager levelManager;
 
     private void Start()
@@ -14,5 +16,9 @@ public class UIManager : MonoBehaviour
     public void ExitToMainMenu()
     {
         levelManager.LoadLevel(0);
+    }
+    public void TogglePauseMenu()
+    {
+        PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
     }
 }
