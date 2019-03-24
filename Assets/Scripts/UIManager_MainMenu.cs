@@ -28,6 +28,35 @@ public class UIManager_MainMenu : MonoBehaviour
             instance.transform.localPosition += new Vector3(posX,0f,0f);
             instance.GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance); });
             posX += 619f;
+
+            Button deleteButton = instance.transform.GetChild(0).GetComponent<Button>();
+            deleteButton.onClick.AddListener(delegate { DeleteThisDrawingFromGallery(s); });
+        }
+    }
+
+    void DeleteThisDrawingFromGallery(Sprite s)
+    {
+        gameManager.DeleteFromGallery(s);
+        UpdateGallery();
+    }
+
+    void UpdateGallery()
+    {
+        for(int i = 0; i < GalleryPicturesContainer.transform.childCount; i++)
+            Destroy(GalleryPicturesContainer.transform.GetChild(i).gameObject);
+
+        EmptyGalleryText.SetActive(gameManager.GetGallerySize() < 1);
+        float posX = 0;
+        foreach (Sprite s in gameManager.GetGalleryPictures())
+        {
+            GameObject instance = Instantiate(GalleryPictureTemplate, GalleryPicturesContainer.transform);
+            instance.GetComponent<Image>().sprite = s;
+            instance.transform.localPosition += new Vector3(posX, 0f, 0f);
+            instance.GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance); });
+            posX += 619f;
+
+            Button deleteButton = instance.transform.GetChild(0).GetComponent<Button>();
+            deleteButton.onClick.AddListener(delegate { DeleteThisDrawingFromGallery(s); });
         }
     }
 

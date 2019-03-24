@@ -46,4 +46,9 @@ public class GameManager : MonoBehaviour
     {
         GalleryPictures.Add(s);
     }
+
+    public void DeleteFromGallery(Sprite s)
+    {
+        GalleryPictures.Remove(s);
+    }
 }
