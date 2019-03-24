@@ -11,6 +11,7 @@ public class User : MonoBehaviour
 
     private Drawing drawing;
     private Color paintColor = Color.red;
+    private int pencilSize = 10;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class User : MonoBehaviour
             GameObject instance = Instantiate(paint, instancePos, Quaternion.identity);
 
             instance.GetComponent<SpriteRenderer>().color = paintColor;
+            instance.transform.localScale = new Vector3((float)pencilSize / 10, (float)pencilSize / 10);
         }
         else
         {
@@ -35,5 +37,9 @@ public class User : MonoBehaviour
     public void ChangeColor(GameObject clickedColor)
     {
         paintColor = clickedColor.GetComponent<Image>().color;
+    }
+    public void ChangeSize(GameObject clickedSize)
+    {
+        pencilSize = int.Parse(clickedSize.name);
     }
 }
