@@ -6,6 +6,8 @@ public class UIManager_MainMenu : MonoBehaviour
 {
     public Animator MenuAnimator;
 
+    public GameObject EmptyGalleryText;
+
     private LevelManager levelManager;
     private GameManager gameManager;
 
@@ -13,6 +15,8 @@ public class UIManager_MainMenu : MonoBehaviour
     {
         levelManager = FindObjectOfType<LevelManager>();
         gameManager = FindObjectOfType<GameManager>();
+
+        EmptyGalleryText.SetActive(gameManager.GetGallerySize() < 1);
     }
 
     public void EnterGallery()

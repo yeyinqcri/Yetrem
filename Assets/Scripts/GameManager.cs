@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     private Sprite imageToDraw;
+    private List<Sprite> GalleryPictures = new List<Sprite>();
 
     private void Awake()
     {
@@ -29,5 +30,10 @@ public class GameManager : MonoBehaviour
     public void SetNewPicture()
     {
         FindObjectOfType<Drawing>().gameObject.GetComponent<SpriteRenderer>().sprite = imageToDraw;
+    }
+
+    public int GetGallerySize()
+    {
+        return GalleryPictures.Count;
     }
 }
