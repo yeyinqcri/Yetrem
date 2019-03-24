@@ -42,4 +42,8 @@ public class GameManager : MonoBehaviour
     {
         return GalleryPictures;
     }
+    public void AddGalleryPicture(Sprite s)
+    {
+        GalleryPictures.Add(s);
+    }
 }
