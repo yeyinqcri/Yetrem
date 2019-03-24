@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class User : MonoBehaviour
 {
+    public GameObject paint;
+
     private Drawing drawing;
 
     private void Start()
@@ -14,7 +16,9 @@ public class User : MonoBehaviour
     {
         if(drawing.IsTouchOver && Input.GetButton("Fire1"))
         {
-            Debug.Log("is drawing");
+            Vector3 instancePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            instancePos.z = -2f;
+            Instantiate(paint, instancePos, Quaternion.identity);
         }
         else
         {
