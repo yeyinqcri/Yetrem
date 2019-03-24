@@ -24,12 +24,10 @@ public class GameManager : MonoBehaviour
     public void SetPictureToDraw(GameObject g)
     {
         imageToDraw = g.GetComponent<Image>().sprite;
-        Debug.Log("image to draw = " + imageToDraw);
     }
 
     public void SetNewPicture()
     {
-        Debug.Log("h");
         FindObjectOfType<Drawing>().gameObject.GetComponent<SpriteRenderer>().sprite = imageToDraw;
     }
 }
