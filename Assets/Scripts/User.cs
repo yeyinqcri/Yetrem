@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class User : MonoBehaviour
 {
     public GameObject paint;
 
+    
+
     private Drawing drawing;
+    private Color paintColor = Color.red;
 
     private void Start()
     {
@@ -18,11 +22,18 @@ public class User : MonoBehaviour
         {
             Vector3 instancePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             instancePos.z = -2f;
-            Instantiate(paint, instancePos, Quaternion.identity);
+            GameObject instance = Instantiate(paint, instancePos, Quaternion.identity);
+
+            instance.GetComponent<SpriteRenderer>().color = paintColor;
         }
         else
         {
             Debug.Log("not drawing");
         }
+    }
+
+    public void ChangeColor(GameObject clickedColor)
+    {
+        paintColor = clickedColor.GetComponent<Image>().color;
     }
 }
