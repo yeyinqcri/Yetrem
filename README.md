@@ -4,3 +4,7 @@
 </p>
 
 ### Drawing game made in Unity3D
+
+<p align="center">
+	<img src="https://i.imgur.com/2f4s7GV.gif" alt="Yetrem">
+</p>
