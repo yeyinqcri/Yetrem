@@ -24,12 +24,12 @@ public class UIManager_MainMenu : MonoBehaviour
         foreach (Sprite s in gameManager.GetGalleryPictures())
         {
             GameObject instance = Instantiate(GalleryPictureTemplate, GalleryPicturesContainer.transform);
-            instance.GetComponent<Image>().sprite = s;
+            instance.transform.GetChild(0).GetComponent<Image>().sprite = s;
             instance.transform.localPosition += new Vector3(posX,0f,0f);
-            instance.GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance); });
+            instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance.transform.GetChild(0).gameObject); });
             posX += 619f;
 
-            Button deleteButton = instance.transform.GetChild(0).GetComponent<Button>();
+            Button deleteButton = instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             deleteButton.onClick.AddListener(delegate { DeleteThisDrawingFromGallery(s); });
         }
     }
@@ -50,12 +50,12 @@ public class UIManager_MainMenu : MonoBehaviour
         foreach (Sprite s in gameManager.GetGalleryPictures())
         {
             GameObject instance = Instantiate(GalleryPictureTemplate, GalleryPicturesContainer.transform);
-            instance.GetComponent<Image>().sprite = s;
+            instance.transform.GetChild(0).GetComponent<Image>().sprite = s;
             instance.transform.localPosition += new Vector3(posX, 0f, 0f);
-            instance.GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance); });
+            instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance.transform.GetChild(0).gameObject); });
             posX += 619f;
 
-            Button deleteButton = instance.transform.GetChild(0).GetComponent<Button>();
+            Button deleteButton = instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             deleteButton.onClick.AddListener(delegate { DeleteThisDrawingFromGallery(s); });
         }
     }
