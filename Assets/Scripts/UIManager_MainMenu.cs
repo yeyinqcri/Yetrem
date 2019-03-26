@@ -12,9 +12,11 @@ public class UIManager_MainMenu : MonoBehaviour
     public GameObject EmptyGalleryText;
     public GameObject GalleryPicturesContainer;
     public GameObject GalleryPictureTemplate;
+    public GameObject DeletePanel;
 
     private LevelManager levelManager;
     private GameManager gameManager;
+    private Sprite drawingDeleteOnHold;
 
     private void Start()
     {
@@ -32,13 +34,19 @@ public class UIManager_MainMenu : MonoBehaviour
             posX += 619f;
 
             Button deleteButton = instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
-            deleteButton.onClick.AddListener(delegate { DeleteThisDrawingFromGallery(s); });
+            deleteButton.onClick.AddListener(delegate { PromptDelete(s); });
         }
     }
 
-    void DeleteThisDrawingFromGallery(Sprite s)
+    void PromptDelete(Sprite s)
     {
-        gameManager.DeleteFromGallery(s);
+        drawingDeleteOnHold = s;
+        DeletePanel.SetActive(true);
+    }
+
+    public void DeleteThisDrawingFromGallery()
+    {
+        gameManager.DeleteFromGallery(drawingDeleteOnHold);
         UpdateGallery();
     }
 
@@ -58,7 +66,7 @@ public class UIManager_MainMenu : MonoBehaviour
             posX += 619f;
 
             Button deleteButton = instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
-            deleteButton.onClick.AddListener(delegate { DeleteThisDrawingFromGallery(s); });
+            deleteButton.onClick.AddListener(delegate { PromptDelete(s); });
         }
     }
 
@@ -117,10 +125,5 @@ public class UIManager_MainMenu : MonoBehaviour
             }
         }, "Import an Image", "image/*",2048);
         return;
-    }
-
-    public void ExportImageFromGallery()
-    {
-
     }
 }

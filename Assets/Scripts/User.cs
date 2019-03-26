@@ -57,7 +57,7 @@ public class User : MonoBehaviour
             Vector3 instancePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             instancePos.z = -2f;
 
-            GameObject instance = Instantiate(paint, instancePos, Quaternion.identity);
+            GameObject instance = Instantiate(paint, instancePos, Quaternion.identity,drawing.gameObject.transform);
             instance.GetComponent<SpriteRenderer>().color = paintColor;
             instance.transform.localScale = new Vector3((float)pencilSize / 10, (float)pencilSize / 10);
         }
