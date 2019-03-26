@@ -1168,6 +1168,8 @@ MonoBehaviour:
   GalleryPictureTemplate: {fileID: 90578691515391122, guid: 56a6c53bd85629b4b98bd462f2066d4a,
     type: 3}
   DeletePanel: {fileID: 614064815}
+  ListOfDrawings: {fileID: 307488504}
+  GalleryList: {fileID: 399250208}
 --- !u!4 &550575330
 Transform:
   m_ObjectHideFlags: 0
@@ -2091,6 +2093,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetGalleryListPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1052851820
@@ -2794,6 +2807,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 550575329}
         m_MethodName: ExitListPictures
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetListOfDrawingsPosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

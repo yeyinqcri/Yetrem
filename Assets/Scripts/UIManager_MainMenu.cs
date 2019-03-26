@@ -14,6 +14,14 @@ public class UIManager_MainMenu : MonoBehaviour
     public GameObject GalleryPictureTemplate;
     public GameObject DeletePanel;
 
+    public GameObject ListOfDrawings;
+    private float ListOfDrawings_X;
+    private float ListOfDrawings_Y;
+
+    public GameObject GalleryList;
+    private float GalleryList_X;
+    private float GalleryList_Y;
+
     private LevelManager levelManager;
     private GameManager gameManager;
     private Sprite drawingDeleteOnHold;
@@ -36,6 +44,23 @@ public class UIManager_MainMenu : MonoBehaviour
             Button deleteButton = instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             deleteButton.onClick.AddListener(delegate { PromptDelete(s); });
         }
+        ListOfDrawings_X = ListOfDrawings.GetComponent<RectTransform>().offsetMin.x;
+        ListOfDrawings_Y = ListOfDrawings.GetComponent<RectTransform>().offsetMax.x;
+
+        GalleryList_X = GalleryList.GetComponent<RectTransform>().offsetMin.x;
+        GalleryList_Y = GalleryList.GetComponent<RectTransform>().offsetMax.x;
+    }
+
+    public void ResetListOfDrawingsPosition()
+    {
+        ListOfDrawings.GetComponent<RectTransform>().offsetMin = new Vector2(ListOfDrawings_X, ListOfDrawings.GetComponent<RectTransform>().offsetMin.y);
+        ListOfDrawings.GetComponent<RectTransform>().offsetMax = new Vector2(ListOfDrawings_Y, ListOfDrawings.GetComponent<RectTransform>().offsetMax.y);
+    }
+
+    public void ResetGalleryListPosition()
+    {
+        GalleryList.GetComponent<RectTransform>().offsetMin = new Vector2(GalleryList_X, GalleryList.GetComponent<RectTransform>().offsetMin.y);
+        GalleryList.GetComponent<RectTransform>().offsetMax = new Vector2(GalleryList_Y, GalleryList.GetComponent<RectTransform>().offsetMax.y);
     }
 
     void PromptDelete(Sprite s)
