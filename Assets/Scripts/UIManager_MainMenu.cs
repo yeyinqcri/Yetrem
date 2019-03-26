@@ -118,4 +118,9 @@ public class UIManager_MainMenu : MonoBehaviour
         }, "Import an Image", "image/*",2048);
         return;
     }
+
+    public void ExportImageFromGallery()
+    {
+
+    }
 }

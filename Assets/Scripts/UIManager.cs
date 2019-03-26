@@ -40,6 +40,13 @@ public class UIManager : MonoBehaviour
         FindObjectOfType<GameManager>().AddGalleryPicture(screenshot);
     }
 
+    public void ExportCurrentPicture()
+    {
+        Texture2D texture = RTImage();
+
+        NativeGallery.SaveImageToGallery(texture, "Yetrem", "My img {0}.jpg");
+    }
+
     Texture2D RTImage()
     {
         renderCamera.enabled = true;
