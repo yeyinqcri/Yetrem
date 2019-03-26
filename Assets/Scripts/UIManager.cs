@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public GameObject PauseMenuPanel;
-    public GameObject FinishMenuPanel;
     public Camera renderCamera;
 
     private LevelManager levelManager;
@@ -23,11 +22,6 @@ public class UIManager : MonoBehaviour
     public void TogglePauseMenu()
     {
         PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
-    }
-
-    public void ToggleFinishMenu()
-    {
-        FinishMenuPanel.SetActive(!FinishMenuPanel.activeInHierarchy);
     }
 
     public void SaveCurrentPictureToGallery()
