@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paint
   - Drawing
+  - DrawingContainer
   layers:
   - Default
   - TransparentFX
