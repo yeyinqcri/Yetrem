@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System;
 
 public class UIManager_MainMenu : MonoBehaviour
 {
@@ -95,5 +97,25 @@ public class UIManager_MainMenu : MonoBehaviour
     public void EnterGame()
     {
         levelManager.LoadLevel(1);
+    }
+
+    public void ImportImageToGallery()
+    {
+        NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
+        {
+            if (path != null)
+            {
+                // Create Texture from selected image
+                Texture2D texture = NativeGallery.LoadImageAtPath(path, 2048);
+                if (texture == null)
+                {
+                    return;
+                }
+                Sprite image = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                gameManager.AddGalleryPicture(image);
+                UpdateGallery();
+            }
+        }, "Import an Image", "image/*",2048);
+        return;
     }
 }
