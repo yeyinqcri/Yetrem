@@ -70,6 +70,7 @@ public class User : MonoBehaviour
     public void ChangeSize(GameObject clickedSize)
     {
         pencilSize = int.Parse(clickedSize.name);
+        FindObjectOfType<UIManager>().SetPencilSizeSelected(clickedSize);
     }
     public void ToggleErasingState()
     {

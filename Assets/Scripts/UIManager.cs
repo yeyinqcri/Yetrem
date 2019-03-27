@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject PauseMenuPanel;
     public Camera renderCamera;
+    public GameObject PencilSizeContainer;
 
     private LevelManager levelManager;
 
@@ -60,5 +61,18 @@ public class UIManager : MonoBehaviour
         // Replace the original active Render Texture.
         RenderTexture.active = currentRT;
         return image;
+    }
+
+    public void SetPencilSizeSelected(GameObject pencilSize)
+    {
+        for(int i = 0; i < PencilSizeContainer.transform.childCount; i++)
+        {
+            Color currentColorBackground = PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color;
+
+            if (PencilSizeContainer.transform.GetChild(i).gameObject == pencilSize)
+                PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(currentColorBackground.r, currentColorBackground.g, currentColorBackground.b, 1f);
+            else
+                PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(currentColorBackground.r, currentColorBackground.g, currentColorBackground.b, 0f);
+        }
     }
 }
