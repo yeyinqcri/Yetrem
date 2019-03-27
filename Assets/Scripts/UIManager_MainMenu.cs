@@ -10,6 +10,11 @@ public class UIManager_MainMenu : MonoBehaviour
     public Animator MenuAnimator;
 
     public GameObject EmptyGalleryText;
+    public Image GalleryIcon;
+    public GameObject TapToSelect;
+    public Sprite Icon_Sad;
+    public Sprite Icon_Happy;
+
     public GameObject GalleryPicturesContainer;
     public GameObject GalleryPictureTemplate;
     public GameObject DeletePanel;
@@ -31,7 +36,7 @@ public class UIManager_MainMenu : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         gameManager = FindObjectOfType<GameManager>();
 
-        EmptyGalleryText.SetActive(gameManager.GetGallerySize() < 1);
+        ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
         float posX = 0;
         foreach (Sprite s in gameManager.GetGalleryPictures())
         {
@@ -51,6 +56,14 @@ public class UIManager_MainMenu : MonoBehaviour
         GalleryList_Y = GalleryList.GetComponent<RectTransform>().offsetMax.x;
     }
 
+    private void ConfigureGalleryUI(bool isEmpty)
+    {
+        EmptyGalleryText.SetActive(isEmpty);
+
+        GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
+        TapToSelect.SetActive(!isEmpty);
+    }
+
     public void ResetListOfDrawingsPosition()
     {
         ListOfDrawings.GetComponent<RectTransform>().offsetMin = new Vector2(ListOfDrawings_X, ListOfDrawings.GetComponent<RectTransform>().offsetMin.y);
@@ -62,6 +75,7 @@ public class UIManager_MainMenu : MonoBehaviour
         GalleryList.GetComponent<RectTransform>().offsetMin = new Vector2(GalleryList_X, GalleryList.GetComponent<RectTransform>().offsetMin.y);
         GalleryList.GetComponent<RectTransform>().offsetMax = new Vector2(GalleryList_Y, GalleryList.GetComponent<RectTransform>().offsetMax.y);
     }
+
 
     void PromptDelete(Sprite s)
     {
@@ -80,7 +94,7 @@ public class UIManager_MainMenu : MonoBehaviour
         for(int i = 0; i < GalleryPicturesContainer.transform.childCount; i++)
             Destroy(GalleryPicturesContainer.transform.GetChild(i).gameObject);
 
-        EmptyGalleryText.SetActive(gameManager.GetGallerySize() < 1);
+        ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
         float posX = 0;
         foreach (Sprite s in gameManager.GetGalleryPictures())
         {
