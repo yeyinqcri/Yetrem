@@ -16,7 +16,6 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public GameObject EmptyGalleryText;
     public Image GalleryIcon;
-    public GameObject TapToSelect;
     public Sprite Icon_Sad;
     public Sprite Icon_Happy;
 
@@ -79,7 +78,6 @@ public class UIManager_MainMenu : MonoBehaviour
         EmptyGalleryText.SetActive(isEmpty);
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
-        TapToSelect.SetActive(!isEmpty);
         GalleryAnimator.enabled = isEmpty;
 
         GalleryIconAnimator.SetBool("isGalleryEmpty", isEmpty);
