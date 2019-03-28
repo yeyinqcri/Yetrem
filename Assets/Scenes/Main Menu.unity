@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuAnimator: {fileID: 308129534}
+  GalleryAnimator: {fileID: 2144530187}
   EmptyGalleryText: {fileID: 1341368181}
   GalleryIcon: {fileID: 1162527247}
   TapToSelect: {fileID: 1101025981}
@@ -4025,6 +4026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144530186}
+  - component: {fileID: 2144530187}
   m_Layer: 5
   m_Name: Gallery
   m_TagString: Untagged
@@ -4059,3 +4061,22 @@ RectTransform:
   m_AnchoredPosition: {x: -750.3, y: -0.019500732}
   m_SizeDelta: {x: 720, y: 1278.4}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &2144530187
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144530185}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa40f73e4665cf14cac38b59fe1f9ea5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

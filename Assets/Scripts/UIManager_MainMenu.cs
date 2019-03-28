@@ -8,6 +8,7 @@ using System;
 public class UIManager_MainMenu : MonoBehaviour
 {
     public Animator MenuAnimator;
+    public Animator GalleryAnimator;
 
     public GameObject EmptyGalleryText;
     public Image GalleryIcon;
@@ -62,6 +63,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
         TapToSelect.SetActive(!isEmpty);
+        GalleryAnimator.enabled = isEmpty;
     }
 
     public void ResetListOfDrawingsPosition()
