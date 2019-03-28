@@ -11,6 +11,9 @@ public class UIManager_MainMenu : MonoBehaviour
     public Animator GalleryAnimator;
     public Animator GalleryIconAnimator;
 
+    public Animator MainIconAnimator;
+    private int animIndex = 0;
+
     public GameObject EmptyGalleryText;
     public Image GalleryIcon;
     public GameObject TapToSelect;
@@ -56,7 +59,20 @@ public class UIManager_MainMenu : MonoBehaviour
 
         GalleryList_X = GalleryList.GetComponent<RectTransform>().offsetMin.x;
         GalleryList_Y = GalleryList.GetComponent<RectTransform>().offsetMax.x;
+
+        animIndex = UnityEngine.Random.Range(0, MainIconAnimator.runtimeAnimatorController.animationClips.Length);
+        MainIconAnimator.SetInteger("AnimIndex", animIndex);
+        StartCoroutine("MainIconAnimations");
     }
+
+    IEnumerator MainIconAnimations()
+    {
+        yield return new WaitForSeconds(MainIconAnimator.GetCurrentAnimatorStateInfo(0).length);
+        animIndex = UnityEngine.Random.Range(0, MainIconAnimator.runtimeAnimatorController.animationClips.Length);
+        MainIconAnimator.SetInteger("AnimIndex", animIndex);
+        StartCoroutine("MainIconAnimations");
+    }
+
 
     private void ConfigureGalleryUI(bool isEmpty)
     {
