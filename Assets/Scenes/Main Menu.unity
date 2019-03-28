@@ -1317,6 +1317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuAnimator: {fileID: 308129534}
   GalleryAnimator: {fileID: 2144530187}
+  GalleryIconAnimator: {fileID: 1162527246}
   EmptyGalleryText: {fileID: 1341368181}
   GalleryIcon: {fileID: 1162527247}
   TapToSelect: {fileID: 1101025981}
@@ -2478,8 +2479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.040038, y: 393.27}
-  m_SizeDelta: {x: 242, y: 207.34}
+  m_AnchoredPosition: {x: 0.040031, y: 394.75}
+  m_SizeDelta: {x: 357.7, y: 268.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1162527246
 Animator:
@@ -2491,7 +2492,7 @@ Animator:
   m_GameObject: {fileID: 1162527244}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9dce475e2ef205045a776b358e531a4c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 81aa1157b61feee41b730477dc2b1750, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2871,7 +2872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.040039, y: 552}
+  m_AnchoredPosition: {x: 0.040039, y: 584.1501}
   m_SizeDelta: {x: 684.6, y: 110.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414030108
@@ -3385,6 +3386,17 @@ MonoBehaviour:
       - m_Target: {fileID: 614064815}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: UpdateGalleryIconState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

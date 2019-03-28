@@ -9,6 +9,7 @@ public class UIManager_MainMenu : MonoBehaviour
 {
     public Animator MenuAnimator;
     public Animator GalleryAnimator;
+    public Animator GalleryIconAnimator;
 
     public GameObject EmptyGalleryText;
     public Image GalleryIcon;
@@ -64,6 +65,8 @@ public class UIManager_MainMenu : MonoBehaviour
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
         TapToSelect.SetActive(!isEmpty);
         GalleryAnimator.enabled = isEmpty;
+
+        GalleryIconAnimator.SetBool("isGalleryEmpty", isEmpty);
     }
 
     public void ResetListOfDrawingsPosition()
@@ -83,12 +86,14 @@ public class UIManager_MainMenu : MonoBehaviour
     {
         drawingDeleteOnHold = s;
         DeletePanel.SetActive(true);
+        GalleryIconAnimator.SetBool("isDeletingDrawing", true);
     }
 
     public void DeleteThisDrawingFromGallery()
     {
         gameManager.DeleteFromGallery(drawingDeleteOnHold);
         UpdateGallery();
+        GalleryIconAnimator.SetBool("isDeletingDrawing", false);
     }
 
     void UpdateGallery()
@@ -166,5 +171,9 @@ public class UIManager_MainMenu : MonoBehaviour
             }
         }, "Import an Image", "image/*",2048);
         return;
+    }
+    public void UpdateGalleryIconState()
+    {
+        GalleryIconAnimator.SetBool("isDeletingDrawing", false);
     }
 }
