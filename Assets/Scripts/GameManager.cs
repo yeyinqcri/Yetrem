@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-        foreach (Sprite o in Resources.LoadAll<Sprite>("Gallery"))
-            GalleryPictures.Add(o);
+        
     }
 
     public void SetPictureToDraw(GameObject g)

@@ -20,6 +20,9 @@ public class UIManager_MainMenu : MonoBehaviour
     public Sprite Icon_Sad;
     public Sprite Icon_Happy;
 
+    public GameObject NewDrawingContainer;
+    public GameObject NewDrawingTemplate;
+
     public GameObject GalleryPicturesContainer;
     public GameObject GalleryPictureTemplate;
     public GameObject DeletePanel;
@@ -38,8 +41,11 @@ public class UIManager_MainMenu : MonoBehaviour
 
     private void Start()
     {
+
         levelManager = FindObjectOfType<LevelManager>();
         gameManager = FindObjectOfType<GameManager>();
+
+        GenerateNewDrawingMenu();
 
         ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
         float posX = 0;
@@ -63,6 +69,22 @@ public class UIManager_MainMenu : MonoBehaviour
         animIndex = UnityEngine.Random.Range(0, MainIconAnimator.runtimeAnimatorController.animationClips.Length);
         MainIconAnimator.SetInteger("AnimIndex", animIndex);
         StartCoroutine("MainIconAnimations");
+
+        
+    }
+
+    private void GenerateNewDrawingMenu()
+    {
+        float posX = 0;
+        foreach (Sprite o in Resources.LoadAll<Sprite>("New Drawing"))
+        {
+            GameObject instance = Instantiate(NewDrawingTemplate, NewDrawingContainer.transform);
+            instance.transform.GetChild(0).GetComponent<Image>().sprite = o;
+            instance.transform.localPosition += new Vector3(posX, 0f,0f);
+            posX += 619f;
+
+            instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance.transform.GetChild(0).gameObject); });
+        }
     }
 
     IEnumerator MainIconAnimations()
