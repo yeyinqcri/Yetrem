@@ -15,6 +15,7 @@ public class UIManager_MainMenu : MonoBehaviour
     private int animIndex = 0;
 
     public GameObject EmptyGalleryText;
+    public Text GalleryNumberText;
     public Image GalleryIcon;
     public Sprite Icon_Sad;
     public Sprite Icon_Happy;
@@ -76,6 +77,9 @@ public class UIManager_MainMenu : MonoBehaviour
     private void ConfigureGalleryUI(bool isEmpty)
     {
         EmptyGalleryText.SetActive(isEmpty);
+        GalleryNumberText.gameObject.SetActive(!isEmpty);
+        if (GalleryNumberText.gameObject.activeInHierarchy)
+            GalleryNumberText.text = "You saved " + gameManager.GetGallerySize() + " drawings!";
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
         GalleryAnimator.enabled = isEmpty;
