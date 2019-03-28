@@ -22,6 +22,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public GameObject NewDrawingContainer;
     public GameObject NewDrawingTemplate;
+    public Text NewDrawingNumberText;
 
     public GameObject GalleryPicturesContainer;
     public GameObject GalleryPictureTemplate;
@@ -75,6 +76,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     private void GenerateNewDrawingMenu()
     {
+        int count = 0;
         float posX = 0;
         foreach (Sprite o in Resources.LoadAll<Sprite>("New Drawing"))
         {
@@ -84,7 +86,9 @@ public class UIManager_MainMenu : MonoBehaviour
             posX += 619f;
 
             instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance.transform.GetChild(0).gameObject); });
+            count++;
         }
+        NewDrawingNumberText.text = "There is " + count + " drawings available!";
     }
 
     IEnumerator MainIconAnimations()
