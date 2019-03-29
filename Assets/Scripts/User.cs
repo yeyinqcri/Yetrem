@@ -17,6 +17,7 @@ public class User : MonoBehaviour
 
     private bool isErasing = false;
     private bool isDrawing = false;
+    public bool IsPaused { get; set; }
 
     private void Start()
     {
@@ -24,6 +25,9 @@ public class User : MonoBehaviour
     }
     private void Update()
     {
+        if (IsPaused)
+            return;
+
         if (Input.GetButtonDown("Fire1") && drawing.IsTouchOver)
             isDrawing = true;
         if (Input.GetButtonUp("Fire1"))
