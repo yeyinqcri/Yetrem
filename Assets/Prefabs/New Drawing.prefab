@@ -150,8 +150,9 @@ GameObject:
   - component: {fileID: 9031418244808987718}
   - component: {fileID: 9031418244808987715}
   - component: {fileID: 9031418244808987712}
+  - component: {fileID: 7205094307446011408}
   m_Layer: 5
-  m_Name: 01
+  m_Name: New Drawing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,3 +215,15 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7205094307446011408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031418244808987719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3edb8e7f39504498fc524bd0cd15e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

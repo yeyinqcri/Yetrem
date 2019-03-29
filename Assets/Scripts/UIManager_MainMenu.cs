@@ -23,6 +23,8 @@ public class UIManager_MainMenu : MonoBehaviour
     public GameObject NewDrawingContainer;
     public GameObject NewDrawingTemplate;
     public Text NewDrawingNumberText;
+    public Text NewDrawingCategoryText;
+    public GameObject CategoryListContainer;
 
     public GameObject GalleryPicturesContainer;
     public GameObject GalleryPictureTemplate;
@@ -46,7 +48,7 @@ public class UIManager_MainMenu : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         gameManager = FindObjectOfType<GameManager>();
 
-        GenerateNewDrawingMenu();
+        GenerateNewDrawingMenu("All");
 
         ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
         float posX = 0;
@@ -74,21 +76,41 @@ public class UIManager_MainMenu : MonoBehaviour
         
     }
 
-    private void GenerateNewDrawingMenu()
+    public void GenerateNewDrawingMenu(string category)
     {
+        for (int i = 0; i < NewDrawingContainer.transform.childCount; i++)
+            Destroy(NewDrawingContainer.transform.GetChild(i).gameObject);
+
         int count = 0;
         float posX = 0;
-        foreach (Sprite o in Resources.LoadAll<Sprite>("New Drawing"))
+        foreach (Sprite o in Resources.LoadAll<Sprite>("New Drawing"+(category.Equals("All") ? "" : "/"+category)))
         {
             GameObject instance = Instantiate(NewDrawingTemplate, NewDrawingContainer.transform);
             instance.transform.GetChild(0).GetComponent<Image>().sprite = o;
             instance.transform.localPosition += new Vector3(posX, 0f,0f);
             posX += 619f;
-
             instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance.transform.GetChild(0).gameObject); });
             count++;
         }
-        NewDrawingNumberText.text = "There is " + count + " drawings available!";
+        NewDrawingNumberText.text = "There are " + count + " drawings available!";
+        NewDrawingCategoryText.text = category;
+
+        for (int i = 0; i < CategoryListContainer.transform.childCount; i++)
+        {
+            GameObject child = CategoryListContainer.transform.GetChild(i).gameObject;
+            Text text = child.transform.GetChild(0).GetComponent<Text>();
+
+            if (text.text.Equals(category))
+            {
+                text.color = Color.green;
+                child.GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                text.color = Color.black;
+                child.GetComponent<Image>().color = Color.black;
+            }
+        }
     }
 
     IEnumerator MainIconAnimations()
