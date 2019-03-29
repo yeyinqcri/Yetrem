@@ -72,8 +72,12 @@ public class UIManager_MainMenu : MonoBehaviour
         animIndex = UnityEngine.Random.Range(0, MainIconAnimator.runtimeAnimatorController.animationClips.Length);
         MainIconAnimator.SetInteger("AnimIndex", animIndex);
         StartCoroutine("MainIconAnimations");
+    }
 
-        
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     public void GenerateNewDrawingMenu(string category)

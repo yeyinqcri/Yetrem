@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-        
     }
 
     public void SetPictureToDraw(GameObject g)
