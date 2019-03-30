@@ -106,16 +106,13 @@ public class UIManager_MainMenu : MonoBehaviour
             GameObject child = CategoryListContainer.transform.GetChild(i).gameObject;
             Text text = child.transform.GetChild(0).GetComponent<Text>();
 
+            Color currentColor = child.GetComponent<Image>().color;
             if (text.text.Equals(category))
-            {
-                text.color = Color.green;
-                child.GetComponent<Image>().color = Color.green;
-            }
+                currentColor = new Color(currentColor.r, currentColor.g, currentColor.b, 1f);
             else
-            {
-                text.color = Color.black;
-                child.GetComponent<Image>().color = Color.black;
-            }
+                currentColor = new Color(currentColor.r, currentColor.g, currentColor.b, 0f);
+
+            child.GetComponent<Image>().color = currentColor;
         }
         ResetListOfDrawingsPosition();
     }
