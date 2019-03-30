@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 29397827}
   - component: {fileID: 29397829}
   - component: {fileID: 29397828}
+  - component: {fileID: 29397830}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -190,6 +191,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29397826}
   m_CullTransparentMesh: 0
+--- !u!95 &29397830
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29397826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0da488575256e14c83da4a19a69ea7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &65254219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,6 +2197,7 @@ GameObject:
   - component: {fileID: 1140324205}
   - component: {fileID: 1140324207}
   - component: {fileID: 1140324206}
+  - component: {fileID: 1140324208}
   m_Layer: 5
   m_Name: ContinuePanel
   m_TagString: Untagged
@@ -2243,6 +2264,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140324204}
   m_CullTransparentMesh: 0
+--- !u!95 &1140324208
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140324204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0da488575256e14c83da4a19a69ea7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1176430907
 GameObject:
   m_ObjectHideFlags: 0
