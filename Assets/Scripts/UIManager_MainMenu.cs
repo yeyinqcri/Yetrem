@@ -48,6 +48,9 @@ public class UIManager_MainMenu : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         gameManager = FindObjectOfType<GameManager>();
 
+        ListOfDrawings_X = ListOfDrawings.GetComponent<RectTransform>().offsetMin.x;
+        ListOfDrawings_Y = ListOfDrawings.GetComponent<RectTransform>().offsetMax.x;
+
         GenerateNewDrawingMenu("All");
 
         ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
@@ -63,8 +66,7 @@ public class UIManager_MainMenu : MonoBehaviour
             Button deleteButton = instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>();
             deleteButton.onClick.AddListener(delegate { PromptDelete(s); });
         }
-        ListOfDrawings_X = ListOfDrawings.GetComponent<RectTransform>().offsetMin.x;
-        ListOfDrawings_Y = ListOfDrawings.GetComponent<RectTransform>().offsetMax.x;
+        
 
         GalleryList_X = GalleryList.GetComponent<RectTransform>().offsetMin.x;
         GalleryList_Y = GalleryList.GetComponent<RectTransform>().offsetMax.x;
@@ -115,6 +117,7 @@ public class UIManager_MainMenu : MonoBehaviour
                 child.GetComponent<Image>().color = Color.black;
             }
         }
+        ResetListOfDrawingsPosition();
     }
 
     IEnumerator MainIconAnimations()
