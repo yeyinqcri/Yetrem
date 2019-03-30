@@ -6,14 +6,39 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public GameObject PauseMenuPanel;
+    public GameObject ExitMenu;
     public Camera renderCamera;
     public GameObject PencilSizeContainer;
+
+    public string ActionOnExit { get; set; }
 
     private LevelManager levelManager;
 
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            FindObjectOfType<User>().IsPaused = true;
+            ExitMenu.SetActive(true);
+        }
+    }
+
+    public void ExecuteExitAction()
+    {
+        if (ActionOnExit.Equals("mainmenu"))
+            ExitToMainMenu();
+        else if (ActionOnExit.Equals("exit"))
+            ExitGame();
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     public void ExitToMainMenu()
