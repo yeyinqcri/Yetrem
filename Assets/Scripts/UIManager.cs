@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public string ActionOnExit { get; set; }
 
     private LevelManager levelManager;
+    private User user;
 
     private void Start()
     {
@@ -26,6 +27,12 @@ public class UIManager : MonoBehaviour
             FindObjectOfType<User>().IsPaused = true;
             ExitMenu.SetActive(true);
         }
+    }
+
+    public void UpdatePencilSizeColor(Color color)
+    {
+        for (int i = 0; i < PencilSizeContainer.transform.childCount; i++)
+            PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color = color;
     }
 
     public void ExecuteExitAction()
@@ -92,12 +99,10 @@ public class UIManager : MonoBehaviour
     {
         for(int i = 0; i < PencilSizeContainer.transform.childCount; i++)
         {
-            Color currentColorBackground = PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color;
-
             if (PencilSizeContainer.transform.GetChild(i).gameObject == pencilSize)
-                PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(currentColorBackground.r, currentColorBackground.g, currentColorBackground.b, 1f);
+                PencilSizeContainer.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(true);
             else
-                PencilSizeContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(currentColorBackground.r, currentColorBackground.g, currentColorBackground.b, 0f);
+                PencilSizeContainer.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }

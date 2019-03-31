@@ -12,7 +12,7 @@ public class User : MonoBehaviour
 
     private Drawing drawing;
 
-    private Color paintColor = Color.red;
+    public Color PaintColor { get; set; }
     private int pencilSize = 10;
 
     private bool isErasing = false;
@@ -22,6 +22,8 @@ public class User : MonoBehaviour
     private void Start()
     {
         drawing = FindObjectOfType<Drawing>();
+        PaintColor = Color.red;
+        FindObjectOfType<UIManager>().UpdatePencilSizeColor(PaintColor);
     }
     private void Update()
     {
@@ -62,14 +64,15 @@ public class User : MonoBehaviour
             instancePos.z = -2f;
 
             GameObject instance = Instantiate(paint, instancePos, Quaternion.identity,drawing.gameObject.transform);
-            instance.GetComponent<SpriteRenderer>().color = paintColor;
+            instance.GetComponent<SpriteRenderer>().color = PaintColor;
             instance.transform.localScale = new Vector3((float)pencilSize / 10, (float)pencilSize / 10);
         }
     }
 
     public void ChangeColor(GameObject clickedColor)
     {
-        paintColor = clickedColor.GetComponent<Image>().color;
+        PaintColor = clickedColor.GetComponent<Image>().color;
+        FindObjectOfType<UIManager>().UpdatePencilSizeColor(PaintColor);
     }
     public void ChangeSize(GameObject clickedSize)
     {
