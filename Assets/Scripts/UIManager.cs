@@ -59,11 +59,16 @@ public class UIManager : MonoBehaviour
     {
         PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
 
+        TogglePauseButton();
+    }
+
+    public void TogglePauseButton()
+    {
         pauseOn = !pauseOn;
         if (!pauseOn)
             PauseOption.GetComponent<Image>().color = Color.white;
         else
-            PauseOption.GetComponent<Image>().color = new Color(0.6f,1,0.6f);
+            PauseOption.GetComponent<Image>().color = new Color(0.6f, 1, 0.6f);
     }
 
     public void SaveCurrentPictureToGallery()
