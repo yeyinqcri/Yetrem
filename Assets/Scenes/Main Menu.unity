@@ -1069,7 +1069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0000916, y: 960}
+  m_AnchoredPosition: {x: 5.0000916, y: 367}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474270297
@@ -1121,6 +1121,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: All
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1567,7 +1578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0000305, y: 600}
+  m_AnchoredPosition: {x: 5.0000305, y: 7}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547013333
@@ -1619,6 +1630,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Flower
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2644,7 +2666,7 @@ MonoBehaviour:
   m_Content: {fileID: 1533634119}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 0
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -2697,7 +2719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 240}
+  m_AnchoredPosition: {x: 5, y: -353}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883162518
@@ -2749,6 +2771,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Simpsons
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3134,7 +3167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0000305, y: 840}
+  m_AnchoredPosition: {x: 5.0000305, y: 247}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071458504
@@ -3186,6 +3219,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Bike
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3381,7 +3425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 360}
+  m_AnchoredPosition: {x: 5, y: -233}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150886479
@@ -3433,6 +3477,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Minion
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4335,8 +4390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035, y: 0}
-  m_SizeDelta: {x: 0, y: 2017}
+  m_AnchoredPosition: {x: -0.000061035, y: 208.7}
+  m_SizeDelta: {x: 0, y: 1231.3}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1539316896
 GameObject:
@@ -4374,7 +4429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 120}
+  m_AnchoredPosition: {x: 5, y: -473}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539316898
@@ -4426,6 +4481,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Teddy Bear
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -5225,7 +5291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0000305, y: 720}
+  m_AnchoredPosition: {x: 5.0000305, y: 127}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830362978
@@ -5277,6 +5343,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Dog
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -5759,7 +5836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 480}
+  m_AnchoredPosition: {x: 5, y: -113}
   m_SizeDelta: {x: 527.5, y: 92.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937303039
@@ -5811,6 +5888,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Hello Kitty
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 550575329}
+        m_MethodName: ResetCategoriesList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

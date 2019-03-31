@@ -151,7 +151,6 @@ public class UIManager_MainMenu : MonoBehaviour
         GalleryList.GetComponent<RectTransform>().offsetMax = new Vector2(GalleryList_Y, GalleryList.GetComponent<RectTransform>().offsetMax.y);
     }
 
-
     void PromptDelete(Sprite s)
     {
         drawingDeleteOnHold = s;
