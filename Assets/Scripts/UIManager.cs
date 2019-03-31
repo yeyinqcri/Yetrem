@@ -9,15 +9,18 @@ public class UIManager : MonoBehaviour
     public GameObject ExitMenu;
     public Camera renderCamera;
     public GameObject PencilSizeContainer;
+    public GameObject PauseOption;
 
     public string ActionOnExit { get; set; }
 
     private LevelManager levelManager;
     private User user;
+    private bool pauseOn = false;
 
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        PauseOption.GetComponent<Image>().color = Color.white;
     }
 
     private void Update()
@@ -55,6 +58,12 @@ public class UIManager : MonoBehaviour
     public void TogglePauseMenu()
     {
         PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
+
+        pauseOn = !pauseOn;
+        if (!pauseOn)
+            PauseOption.GetComponent<Image>().color = Color.white;
+        else
+            PauseOption.GetComponent<Image>().color = new Color(0.6f,1,0.6f);
     }
 
     public void SaveCurrentPictureToGallery()
