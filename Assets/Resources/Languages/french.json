@@ -1,0 +1,21 @@
+{
+    "MainMenu_Button_NewDrawing": "Novo Desenho",
+    "MainMenu_Button_Gallery": "Galeria",
+    "Gallery_Button_Return": "Voltar",
+    "Gallery_Text_EmptyText": "Vazio",
+    "Gallery_Text_EmptyDescription": "Ainda nao existem desenhos! Experimenta importar ou comecar um novo!",
+    "Gallery_Text_Title": "A Tua Galeria",
+    "Gallery_Button_Import": "Importar",
+    "Gallery_DeletePanel_Text": "Queres mesmo apagar este desenho?",
+    "NewDrawing_Button_Return": "Voltar",
+    "NewDrawing_Text_Title": "Novo Desenho",
+    "NewDrawing_Button_Filter": "Filtrar por Categoria",
+    "Game_PauseMenu_SaveToGallery": "Guardar Desenho",
+    "Game_PauseMenu_Export": "Exportar",
+    "Game_PauseMenu_MainMenu": "Menu Principal",
+    "Game_ContinuePanel_Text": "Queres continuar a Desenhar?",
+    "Game_ExitMenu_Return": "Voltar",
+    "Game_ExitMenu_MainMenu": "Menu Principal",
+    "Game_ExitMenu_ExitGame": "Sair do Jogo",
+    "Game_SaveToGallery_Text": "Queres guardar o desenho atual?"
+}

@@ -59,10 +59,10 @@ public class GameManager : MonoBehaviour
 
     public void SetLanguage(string language)
     {
+        Language = language;
         var jsonTextFile = Resources.Load<TextAsset>("Languages/" + language);
         Translation t = JsonUtility.FromJson<Translation>(jsonTextFile.text);
         TranslatedText = t;
         FindObjectOfType<LanguageManager>().UpdateLanguage(t);
-        Language = language;
     }
 }

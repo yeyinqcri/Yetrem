@@ -42,6 +42,8 @@ public class UIManager_MainMenu : MonoBehaviour
     private GameManager gameManager;
     private Sprite drawingDeleteOnHold;
 
+    private string category = "";
+
     private void Start()
     {
 
@@ -91,6 +93,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public void GenerateNewDrawingMenu(string category)
     {
+        this.category = category;
         for (int i = 0; i < NewDrawingContainer.transform.childCount; i++)
             Destroy(NewDrawingContainer.transform.GetChild(i).gameObject);
 
@@ -109,6 +112,8 @@ public class UIManager_MainMenu : MonoBehaviour
             NewDrawingNumberText.text = "There are " + count + " drawings available!";
         else if(gameManager.Language.Equals("portuguese"))
             NewDrawingNumberText.text = "Existem " + count + " desenhos disponiveis!";
+        else if (gameManager.Language.Equals("spanish"))
+            NewDrawingNumberText.text = "Hay " + count + " disenos disponibles!";
 
         NewDrawingCategoryText.text = category;
 
@@ -147,6 +152,8 @@ public class UIManager_MainMenu : MonoBehaviour
                 GalleryNumberText.text = "You saved " + gameManager.GetGallerySize() + " drawings!";
             else if (gameManager.Language.Equals("portuguese"))
                 GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " desenhos!";
+            else if (gameManager.Language.Equals("spanish"))
+                GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " dibujos!";
         }
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
@@ -260,5 +267,11 @@ public class UIManager_MainMenu : MonoBehaviour
     public void UpdateGalleryIconState()
     {
         GalleryIconAnimator.SetBool("isDeletingDrawing", false);
+    }
+    public void SetLanguage(string language)
+    {
+        FindObjectOfType<GameManager>().SetLanguage(language);
+        GenerateNewDrawingMenu(this.category);
+        UpdateGallery();
     }
 }
