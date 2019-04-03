@@ -105,7 +105,11 @@ public class UIManager_MainMenu : MonoBehaviour
             instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { TaskWithParameters(instance.transform.GetChild(0).gameObject); });
             count++;
         }
-        NewDrawingNumberText.text = "There are " + count + " drawings available!";
+        if(gameManager.Language.Equals("english"))
+            NewDrawingNumberText.text = "There are " + count + " drawings available!";
+        else if(gameManager.Language.Equals("portuguese"))
+            NewDrawingNumberText.text = "Existem " + count + " desenhos disponiveis!";
+
         NewDrawingCategoryText.text = category;
 
         for (int i = 0; i < CategoryListContainer.transform.childCount; i++)
@@ -138,7 +142,12 @@ public class UIManager_MainMenu : MonoBehaviour
         EmptyGalleryText.SetActive(isEmpty);
         GalleryNumberText.gameObject.SetActive(!isEmpty);
         if (GalleryNumberText.gameObject.activeInHierarchy)
-            GalleryNumberText.text = "You saved " + gameManager.GetGallerySize() + " drawings!";
+        {
+            if(gameManager.Language.Equals("english"))
+                GalleryNumberText.text = "You saved " + gameManager.GetGallerySize() + " drawings!";
+            else if (gameManager.Language.Equals("portuguese"))
+                GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " desenhos!";
+        }
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
         GalleryAnimator.enabled = isEmpty;

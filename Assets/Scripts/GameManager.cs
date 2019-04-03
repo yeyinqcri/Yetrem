@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     private Sprite imageToDraw;
     private List<Sprite> GalleryPictures = new List<Sprite>();
+    public Translation TranslatedText { get; set; }
+    public string Language { get; set; }
 
     private void Awake()
     {
@@ -20,6 +22,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        SetLanguage("english");
     }
 
     public void SetPictureToDraw(GameObject g)
@@ -48,5 +55,14 @@ public class GameManager : MonoBehaviour
     public void DeleteFromGallery(Sprite s)
     {
         GalleryPictures.Remove(s);
+    }
+
+    public void SetLanguage(string language)
+    {
+        var jsonTextFile = Resources.Load<TextAsset>("Languages/" + language);
+        Translation t = JsonUtility.FromJson<Translation>(jsonTextFile.text);
+        TranslatedText = t;
+        FindObjectOfType<LanguageManager>().UpdateLanguage(t);
+        Language = language;
     }
 }

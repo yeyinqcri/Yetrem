@@ -1,0 +1,21 @@
+{
+    "MainMenu_Button_NewDrawing": "New Drawing",
+    "MainMenu_Button_Gallery": "Gallery",
+    "Gallery_Button_Return": "Return",
+    "Gallery_Text_EmptyText": "Empty",
+    "Gallery_Text_EmptyDescription": "You don't have any drawings yet! Try the import button or start a new drawing!",
+    "Gallery_Text_Title": "Your Gallery",
+    "Gallery_Button_Import": "Import",
+    "Gallery_DeletePanel_Text": "Are you sure you want to delete this drawing?",
+    "NewDrawing_Button_Return": "Return",
+    "NewDrawing_Text_Title": "New Drawing",
+    "NewDrawing_Button_Filter": "Filter By Category",
+    "Game_PauseMenu_SaveToGallery": "Save To Gallery",
+    "Game_PauseMenu_Export": "Export",
+    "Game_PauseMenu_MainMenu": "Main Menu",
+    "Game_ContinuePanel_Text": "Do You Wish To Continue Drawing?",
+    "Game_ExitMenu_Return": "Return",
+    "Game_ExitMenu_MainMenu": "Main Menu",
+    "Game_ExitMenu_ExitGame": "Exit Game",
+    "Game_SaveToGallery_Text": "Do You Want To Save The Current Drawing?"
+}
