@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void ExitGame()
     {
+        SaveGalleryToDevice();
         Application.Quit();
     }
 
@@ -60,6 +61,7 @@ public class UIManager : MonoBehaviour
         PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
 
         TogglePauseButton();
+        FindObjectOfType<User>().IsPaused = !FindObjectOfType<User>().IsPaused;
     }
 
     public void TogglePauseButton()
@@ -86,6 +88,12 @@ public class UIManager : MonoBehaviour
         Texture2D texture = RTImage();
 
         NativeGallery.SaveImageToGallery(texture, "Yetrem", "My img {0}.jpg");
+    }
+
+    public void SaveGalleryToDevice()
+    {
+        
+
     }
 
     Texture2D RTImage()

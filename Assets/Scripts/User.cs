@@ -18,6 +18,7 @@ public class User : MonoBehaviour
     private bool isErasing = false;
     private bool isDrawing = false;
     public bool IsPaused { get; set; }
+    public bool IsDrawing { get => isDrawing; set => isDrawing = value; }
 
     private void Start()
     {

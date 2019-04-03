@@ -48,6 +48,8 @@ public class UIManager_MainMenu : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         gameManager = FindObjectOfType<GameManager>();
 
+        LoadGalleryDrawings();
+
         ListOfDrawings_X = ListOfDrawings.GetComponent<RectTransform>().offsetMin.x;
         ListOfDrawings_Y = ListOfDrawings.GetComponent<RectTransform>().offsetMax.x;
 
@@ -80,6 +82,11 @@ public class UIManager_MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
+    }
+
+    public void LoadGalleryDrawings()
+    {
+        
     }
 
     public void GenerateNewDrawingMenu(string category)
