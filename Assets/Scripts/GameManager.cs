@@ -26,12 +26,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        LoadLanguage();
+    }
+
+    public void LoadLanguage()
+    {
         string loadedLanguage = PlayerPrefs.GetString("language");
         if (loadedLanguage.Equals(""))
             SetLanguage("english");
         else
             SetLanguage(loadedLanguage);
     }
+
 
     public void SetPictureToDraw(GameObject g)
     {

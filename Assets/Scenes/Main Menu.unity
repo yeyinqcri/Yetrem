@@ -2025,6 +2025,7 @@ MonoBehaviour:
   GalleryPictureTemplate: {fileID: 90578691515391122, guid: 56a6c53bd85629b4b98bd462f2066d4a,
     type: 3}
   DeletePanel: {fileID: 614064815}
+  LanguageScrollPosY: {fileID: 72842228}
   ListOfDrawings: {fileID: 307488504}
   GalleryList: {fileID: 399250208}
 --- !u!4 &550575330

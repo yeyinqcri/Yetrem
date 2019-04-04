@@ -30,6 +30,8 @@ public class UIManager_MainMenu : MonoBehaviour
     public GameObject GalleryPictureTemplate;
     public GameObject DeletePanel;
 
+    public GameObject LanguageScrollPosY;
+
     public GameObject ListOfDrawings;
     private float ListOfDrawings_X;
     private float ListOfDrawings_Y;
@@ -78,7 +80,26 @@ public class UIManager_MainMenu : MonoBehaviour
         animIndex = UnityEngine.Random.Range(0, MainIconAnimator.runtimeAnimatorController.animationClips.Length);
         MainIconAnimator.SetInteger("AnimIndex", animIndex);
         StartCoroutine("MainIconAnimations");
+
+        float x = 0f;
+        switch(gameManager.Language)
+        {
+            case "english":
+                x = 0f;
+                break;
+            case "french":
+                x = 120f;
+                break;
+            case "portuguese":
+                x = 240f;
+                break;
+            case "spanish":
+                x = 360f;
+                break;
+        }
+        LanguageScrollPosY.GetComponent<RectTransform>().localPosition += new Vector3(0f,x, 0f);  
     }
+
 
     private void Update()
     {
