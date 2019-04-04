@@ -114,6 +114,8 @@ public class UIManager_MainMenu : MonoBehaviour
             NewDrawingNumberText.text = "Existem " + count + " desenhos disponiveis!";
         else if (gameManager.Language.Equals("spanish"))
             NewDrawingNumberText.text = "Hay " + count + " disenos disponibles!";
+        else if (gameManager.Language.Equals("french"))
+            NewDrawingNumberText.text = "Il y a " + count + " dessins disponibles!";
 
         NewDrawingCategoryText.text = category;
 
@@ -154,6 +156,8 @@ public class UIManager_MainMenu : MonoBehaviour
                 GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " desenhos!";
             else if (gameManager.Language.Equals("spanish"))
                 GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " dibujos!";
+            else if (gameManager.Language.Equals("french"))
+                GalleryNumberText.text = "Vous avez enregistre " + gameManager.GetGallerySize() + " dessins!";
         }
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
