@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour
     public void ExitGame()
     {
         SaveGalleryToDevice();
+        PlayerPrefs.SetString("language", FindObjectOfType<GameManager>().Language);
         Application.Quit();
     }
 

@@ -83,7 +83,10 @@ public class UIManager_MainMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayerPrefs.SetString("language", FindObjectOfType<GameManager>().Language);
             Application.Quit();
+        }
     }
 
     public void LoadGalleryDrawings()
