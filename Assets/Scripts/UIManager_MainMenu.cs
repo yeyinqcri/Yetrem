@@ -109,13 +109,13 @@ public class UIManager_MainMenu : MonoBehaviour
             count++;
         }
         if(gameManager.Language.Equals("english"))
-            NewDrawingNumberText.text = "There are " + count + " drawings available!";
+            NewDrawingNumberText.text = (count > 1) ? ("There are " + count + " drawings available!") : ("There are " + count + " drawing available!");
         else if(gameManager.Language.Equals("portuguese"))
-            NewDrawingNumberText.text = "Existem " + count + " desenhos disponiveis!";
+            NewDrawingNumberText.text = (count > 1) ? ("Existem " + count + " desenhos disponiveis!") : ("Existe " + count + " desenho disponivel!");
         else if (gameManager.Language.Equals("spanish"))
-            NewDrawingNumberText.text = "Hay " + count + " disenos disponibles!";
+            NewDrawingNumberText.text = (count > 1) ? ("Hay " + count + " disenos disponibles!") : ("Hay " + count + " dibujo disponible!");
         else if (gameManager.Language.Equals("french"))
-            NewDrawingNumberText.text = "Il y a " + count + " dessins disponibles!";
+            NewDrawingNumberText.text = (count > 1) ? ("Il y a " + count + " dessins disponibles!") : ("Il y a " + count + " dessin disponible!");
 
         NewDrawingCategoryText.text = category;
 
@@ -151,13 +151,13 @@ public class UIManager_MainMenu : MonoBehaviour
         if (GalleryNumberText.gameObject.activeInHierarchy)
         {
             if(gameManager.Language.Equals("english"))
-                GalleryNumberText.text = "You saved " + gameManager.GetGallerySize() + " drawings!";
+                GalleryNumberText.text = (gameManager.GetGallerySize() > 1) ? ("You saved " + gameManager.GetGallerySize() + " drawings!") : ("You saved " + gameManager.GetGallerySize() + " drawing!");
             else if (gameManager.Language.Equals("portuguese"))
-                GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " desenhos!";
+                GalleryNumberText.text = (gameManager.GetGallerySize() > 1) ? ("Guardaste " + gameManager.GetGallerySize() + " desenhos!") : ("Guardaste " + gameManager.GetGallerySize() + " desenho!");
             else if (gameManager.Language.Equals("spanish"))
-                GalleryNumberText.text = "Guardaste " + gameManager.GetGallerySize() + " dibujos!";
+                GalleryNumberText.text = (gameManager.GetGallerySize() > 1) ? ("Guardaste " + gameManager.GetGallerySize() + " dibujos!") : ("Guardaste " + gameManager.GetGallerySize() + " dibujo!");
             else if (gameManager.Language.Equals("french"))
-                GalleryNumberText.text = "Vous avez enregistre " + gameManager.GetGallerySize() + " dessins!";
+                GalleryNumberText.text = (gameManager.GetGallerySize() > 1) ? ("Vous avez enregistre " + gameManager.GetGallerySize() + " dessins!") : ("Vous avez enregistre " + gameManager.GetGallerySize() + " dessin!");
         }
 
         GalleryIcon.sprite = (isEmpty) ? Icon_Sad : Icon_Happy;
