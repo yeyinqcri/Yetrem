@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Translation TranslatedText { get; set; }
     public string Language { get; set; }
 
+    public bool FirstTimeRun { get; set; }
+
     private void Awake()
     {
 
@@ -33,9 +35,15 @@ public class GameManager : MonoBehaviour
     {
         string loadedLanguage = PlayerPrefs.GetString("language");
         if (loadedLanguage.Equals(""))
+        {
+            FirstTimeRun = true;
             SetLanguage("english");
+        }
         else
+        {
+            FirstTimeRun = false;
             SetLanguage(loadedLanguage);
+        }
     }
 
 

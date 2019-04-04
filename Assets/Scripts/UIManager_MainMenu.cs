@@ -29,6 +29,7 @@ public class UIManager_MainMenu : MonoBehaviour
     public GameObject GalleryPicturesContainer;
     public GameObject GalleryPictureTemplate;
     public GameObject DeletePanel;
+    public GameObject LanguagePanel;
 
     public GameObject LanguageScrollPosY;
 
@@ -97,7 +98,9 @@ public class UIManager_MainMenu : MonoBehaviour
                 x = 360f;
                 break;
         }
-        LanguageScrollPosY.GetComponent<RectTransform>().localPosition += new Vector3(0f,x, 0f);  
+        LanguageScrollPosY.GetComponent<RectTransform>().localPosition += new Vector3(0f,x, 0f);
+
+        LanguagePanel.SetActive(gameManager.FirstTimeRun);
     }
 
 
@@ -301,5 +304,22 @@ public class UIManager_MainMenu : MonoBehaviour
         FindObjectOfType<GameManager>().SetLanguage(language);
         GenerateNewDrawingMenu(this.category);
         UpdateGallery();
+        float x = 0f;
+        switch (gameManager.Language)
+        {
+            case "english":
+                x = 0f;
+                break;
+            case "french":
+                x = 120f;
+                break;
+            case "portuguese":
+                x = 240f;
+                break;
+            case "spanish":
+                x = 360f;
+                break;
+        }
+        LanguageScrollPosY.GetComponent<RectTransform>().localPosition += new Vector3(0f, x, 0f);
     }
 }
