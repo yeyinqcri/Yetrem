@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 79508658}
   - component: {fileID: 79508657}
   m_Layer: 5
-  m_Name: Button (11)
+  m_Name: Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 336709957}
   - component: {fileID: 336709956}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2064,7 +2064,7 @@ GameObject:
   - component: {fileID: 404042540}
   - component: {fileID: 404042539}
   m_Layer: 5
-  m_Name: Button (10)
+  m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 474270298}
   - component: {fileID: 474270297}
   m_Layer: 5
-  m_Name: Button
+  m_Name: All
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2807,6 +2807,7 @@ MonoBehaviour:
   DeletePanel: {fileID: 614064815}
   LanguagePanel: {fileID: 336890743}
   LanguageScrollPosY: {fileID: 72842228}
+  CategoryName: {fileID: 587684802}
   ListOfDrawings: {fileID: 307488504}
   GalleryList: {fileID: 399250208}
 --- !u!4 &550575330
@@ -3359,7 +3360,7 @@ GameObject:
   - component: {fileID: 672397318}
   - component: {fileID: 672397317}
   m_Layer: 5
-  m_Name: Button (13)
+  m_Name: Other
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4929,7 +4930,7 @@ GameObject:
   - component: {fileID: 1071458505}
   - component: {fileID: 1071458504}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Animal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5099,7 +5100,7 @@ GameObject:
   - component: {fileID: 1145422081}
   - component: {fileID: 1145422080}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5228,7 +5229,7 @@ GameObject:
   - component: {fileID: 1161893640}
   - component: {fileID: 1161893639}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Complex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5609,7 +5610,7 @@ GameObject:
   - component: {fileID: 1209422646}
   - component: {fileID: 1209422645}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6188,7 +6189,7 @@ GameObject:
   - component: {fileID: 1408036027}
   - component: {fileID: 1408036026}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: Job
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6396,7 +6397,7 @@ GameObject:
   - component: {fileID: 1435873267}
   - component: {fileID: 1435873266}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: Love
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7252,7 +7253,7 @@ GameObject:
   - component: {fileID: 1686811199}
   - component: {fileID: 1686811198}
   m_Layer: 5
-  m_Name: Button (12)
+  m_Name: Vehicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8604,7 +8605,7 @@ GameObject:
   - component: {fileID: 1972582301}
   - component: {fileID: 1972582300}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9110,7 +9111,7 @@ GameObject:
   - component: {fileID: 2139857833}
   - component: {fileID: 2139857832}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Fantastic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

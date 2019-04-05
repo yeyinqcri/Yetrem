@@ -33,6 +33,8 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public GameObject LanguageScrollPosY;
 
+    public Text CategoryName;
+
     public GameObject ListOfDrawings;
     private float ListOfDrawings_X;
     private float ListOfDrawings_Y;
@@ -44,6 +46,8 @@ public class UIManager_MainMenu : MonoBehaviour
     private LevelManager levelManager;
     private GameManager gameManager;
     private Sprite drawingDeleteOnHold;
+
+    private string[] categoriesNames = {"All","Animal","Building","Complex","Face","Fantastic","Flower","Fruit","Job","Love","Object","Other","Space","Vehicle"};
 
     private string category = "";
 
@@ -149,10 +153,10 @@ public class UIManager_MainMenu : MonoBehaviour
         for (int i = 0; i < CategoryListContainer.transform.childCount; i++)
         {
             GameObject child = CategoryListContainer.transform.GetChild(i).gameObject;
-            Text text = child.transform.GetChild(0).GetComponent<Text>();
+            string text = child.name;
 
             Color currentColor = child.GetComponent<Image>().color;
-            if (text.text.Equals(category))
+            if (text.Equals(category))
                 currentColor = new Color(currentColor.r, currentColor.g, currentColor.b, 1f);
             else
                 currentColor = new Color(currentColor.r, currentColor.g, currentColor.b, 0f);
@@ -160,6 +164,150 @@ public class UIManager_MainMenu : MonoBehaviour
             child.GetComponent<Image>().color = currentColor;
         }
         ResetListOfDrawingsPosition();
+
+        switch (category)
+        {
+            case "All":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "All";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Tout";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Todos";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Todos";
+                break;
+            case "Animal":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Animal";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Animal";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Animal";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Animal";
+                break;
+            case "Building":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Building";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Edifice";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Edificio";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Edificio";
+                break;
+            case "Complex":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Complex";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Complexe";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Complexo";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Complejo";
+                break;
+            case "Face":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Face";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Face";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Face";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Cara";
+                break;
+            case "Fantastic":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Fantastic";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Imaginaire";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Fantastico";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Fantastico";
+                break;
+            case "Flower":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Flower";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Fleur";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Flor";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Flor";
+                break;
+            case "Fruit":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Fruit";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Fruit";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Fruta";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Fruta";
+                break;
+            case "Job":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Job";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Emploi";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Trabalho";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Trabajo";
+                break;
+            case "Love":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Love";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Amour";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Amor";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Amor";
+                break;
+            case "Object":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Object";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Objet";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Objeto";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Objeto";
+                break;
+            case "Other":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Other";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Autre";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Outros";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Otros";
+                break;
+            case "Space":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Space";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Cosmique";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Cosmico";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Cosmico";
+                break;
+            case "Vehicle":
+                if (gameManager.Language.Equals("english"))
+                    CategoryName.text = "Vehicle";
+                else if (gameManager.Language.Equals("french"))
+                    CategoryName.text = "Vehicule";
+                else if (gameManager.Language.Equals("portuguese"))
+                    CategoryName.text = "Veiculo";
+                else if (gameManager.Language.Equals("spanish"))
+                    CategoryName.text = "Vehiculo";
+                break;
+        }
     }
 
     IEnumerator MainIconAnimations()
@@ -299,11 +447,162 @@ public class UIManager_MainMenu : MonoBehaviour
     {
         GalleryIconAnimator.SetBool("isDeletingDrawing", false);
     }
+    public void UpdateCategoriesLanguage()
+    {
+        for (int i = 0; i < CategoryListContainer.transform.childCount; i++)
+        {
+            Text t = CategoryListContainer.transform.GetChild(i).transform.GetChild(0).GetComponent<Text>();
+            switch (categoriesNames[i])
+            {
+                case "All":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "All";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Tout";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Todos";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Todos";
+                    break;
+                case "Animal":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Animal";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Animal";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Animal";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Animal";
+                    break;
+                case "Building":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Building";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Edifice";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Edificio";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Edificio";
+                    break;
+                case "Complex":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Complex";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Complexe";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Complexo";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Complejo";
+                    break;
+                case "Face":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Face";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Face";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Face";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Cara";
+                    break;
+                case "Fantastic":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Fantastic";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Imaginaire";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Fantastico";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Fantastico";
+                    break;
+                case "Flower":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Flower";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Fleur";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Flor";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Flor";
+                    break;
+                case "Fruit":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Fruit";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Fruit";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Fruta";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Fruta";
+                    break;
+                case "Job":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Job";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Emploi";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Trabalho";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Trabajo";
+                    break;
+                case "Love":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Love";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Amour";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Amor";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Amor";
+                    break;
+                case "Object":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Object";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Objet";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Objeto";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Objeto";
+                    break;
+                case "Other":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Other";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Autre";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Outros";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Otros";
+                    break;
+                case "Space":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Space";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Cosmique";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Cosmico";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Cosmico";
+                    break;
+                case "Vehicle":
+                    if (gameManager.Language.Equals("english"))
+                        t.text = "Vehicle";
+                    else if (gameManager.Language.Equals("french"))
+                        t.text = "Vehicule";
+                    else if (gameManager.Language.Equals("portuguese"))
+                        t.text = "Veiculo";
+                    else if (gameManager.Language.Equals("spanish"))
+                        t.text = "Vehiculo";
+                    break;
+            }
+        }
+    }
     public void SetLanguage(string language)
     {
         FindObjectOfType<GameManager>().SetLanguage(language);
         GenerateNewDrawingMenu(this.category);
         UpdateGallery();
+        UpdateCategoriesLanguage();
         float x = 0f;
         switch (gameManager.Language)
         {
