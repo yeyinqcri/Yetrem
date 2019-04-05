@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadLanguage();
+        Debug.Log(FirstTimeRun);
     }
 
     public void LoadLanguage()
