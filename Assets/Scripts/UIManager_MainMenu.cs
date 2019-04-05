@@ -47,7 +47,7 @@ public class UIManager_MainMenu : MonoBehaviour
     private GameManager gameManager;
     private Sprite drawingDeleteOnHold;
 
-    private string[] categoriesNames = {"All","Animal","Building","Complex","Face","Fantastic","Flower","Fruit","Job","Love","Object","Other","Space","Vehicle"};
+    private string[] categoriesNames = {"All","Animal","Building","Complex","Face","Fantastic","Flower","Fruit","Job","Love","Object","Space","Vehicle", "Other" };
 
     private string category = "";
 
