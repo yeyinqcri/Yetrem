@@ -35,6 +35,7 @@ public class UIManager_MainMenu : MonoBehaviour
 
     public Text CategoryName;
     public Text CategoryTitle;
+    public Text CategoryConfirmButtonText;
 
     public GameObject ListOfDrawings;
     private float ListOfDrawings_X;
@@ -311,13 +312,25 @@ public class UIManager_MainMenu : MonoBehaviour
         }
 
         if (gameManager.Language.Equals("english"))
+        {
             CategoryTitle.text = "Categories";
+            CategoryConfirmButtonText.text = "Confirm";
+        }
         else if(gameManager.Language.Equals("french"))
+        {
             CategoryTitle.text = "Categories";
+            CategoryConfirmButtonText.text = "Confirmer";
+        }
         else if (gameManager.Language.Equals("portuguese"))
+        {
             CategoryTitle.text = "Categorias";
+            CategoryConfirmButtonText.text = "Confirmar";
+        }
         else if (gameManager.Language.Equals("spanish"))
+        {
             CategoryTitle.text = "Categorias";
+            CategoryConfirmButtonText.text = "Confirmar";
+        }
     }
 
     IEnumerator MainIconAnimations()
