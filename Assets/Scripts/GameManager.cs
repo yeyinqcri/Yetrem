@@ -28,8 +28,73 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        LoadGalleryFromDevice();
         LoadLanguage();
-        Debug.Log(FirstTimeRun);
+    }
+
+    public void SaveGaleryToDevice()
+    {
+        if(!System.IO.File.Exists(Application.persistentDataPath + "/Yetrem/Gallery/"))
+        {
+            if (!System.IO.File.Exists(Application.persistentDataPath + "/Yetrem/"))
+            {
+                System.IO.DirectoryInfo d = new System.IO.DirectoryInfo(Application.persistentDataPath); 
+                d.CreateSubdirectory("Yetrem");                               
+            }
+
+            System.IO.DirectoryInfo t = new System.IO.DirectoryInfo(Application.persistentDataPath+"/Yetrem/"); 
+            t.CreateSubdirectory("Gallery");
+        }
+        EraseAllDeviceGalleryDrawings();
+        string path = Application.persistentDataPath + "/Yetrem/Gallery/";
+        int i = 0;
+        foreach (Sprite drawing in GalleryPictures)
+        {
+            System.IO.File.WriteAllBytes(path + "image" + i+".jpg", drawing.texture.EncodeToJPG());
+            i++;
+        }
+    }
+
+    public void EraseAllDeviceGalleryDrawings()
+    {
+        string path = Application.persistentDataPath + "/Yetrem/Gallery/";
+        System.IO.DirectoryInfo dataDir = new System.IO.DirectoryInfo(path);
+        try
+        {
+            System.IO.FileInfo[] fileinfo = dataDir.GetFiles();
+            for (int i = 0; i < fileinfo.Length; i++)
+            {
+                string name = fileinfo[i].Name;
+                System.IO.File.Delete(Application.persistentDataPath + "/Yetrem/Gallery/" + name);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e);
+        }
+    }
+    public void LoadGalleryFromDevice()
+    {
+        string path = Application.persistentDataPath + "/Yetrem/Gallery/";
+        System.IO.DirectoryInfo dataDir = new System.IO.DirectoryInfo(path);
+        try
+        {
+            System.IO.FileInfo[] fileinfo = dataDir.GetFiles();
+            for (int i = 0; i < fileinfo.Length; i++)
+            {
+                string name = fileinfo[i].Name;
+                byte[] bytes = System.IO.File.ReadAllBytes(Application.persistentDataPath + "/Yetrem/Gallery/" + name);
+
+                Texture2D tex = new Texture2D(567, 794);
+                tex.LoadImage(bytes);
+                Sprite s = Sprite.Create(tex, new Rect(0f, 0f, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+                AddGalleryPicture(s);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e);
+        }
     }
 
     public void LoadLanguage()

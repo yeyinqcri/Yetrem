@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
 
     public void ExitGame()
     {
-        SaveGalleryToDevice();
+        FindObjectOfType<GameManager>().SaveGaleryToDevice();
         PlayerPrefs.SetString("language", FindObjectOfType<GameManager>().Language);
         Application.Quit();
     }
@@ -89,12 +89,6 @@ public class UIManager : MonoBehaviour
         Texture2D texture = RTImage();
 
         NativeGallery.SaveImageToGallery(texture, "Yetrem", "My img {0}.jpg");
-    }
-
-    public void SaveGalleryToDevice()
-    {
-        
-
     }
 
     Texture2D RTImage()
