@@ -34,6 +34,7 @@ public class UIManager_MainMenu : MonoBehaviour
     public GameObject LanguageScrollPosY;
 
     public Text CategoryName;
+    public Text CategoryTitle;
 
     public GameObject ListOfDrawings;
     private float ListOfDrawings_X;
@@ -308,6 +309,15 @@ public class UIManager_MainMenu : MonoBehaviour
                     CategoryName.text = "Vehiculo";
                 break;
         }
+
+        if (gameManager.Language.Equals("english"))
+            CategoryTitle.text = "Categories";
+        else if(gameManager.Language.Equals("french"))
+            CategoryTitle.text = "Categories";
+        else if (gameManager.Language.Equals("portuguese"))
+            CategoryTitle.text = "Categorias";
+        else if (gameManager.Language.Equals("spanish"))
+            CategoryTitle.text = "Categorias";
     }
 
     IEnumerator MainIconAnimations()

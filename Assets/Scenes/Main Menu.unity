@@ -2809,6 +2809,7 @@ MonoBehaviour:
   LanguagePanel: {fileID: 336890743}
   LanguageScrollPosY: {fileID: 72842228}
   CategoryName: {fileID: 587684802}
+  CategoryTitle: {fileID: 1836335300}
   ListOfDrawings: {fileID: 307488504}
   GalleryList: {fileID: 399250208}
 --- !u!4 &550575330
