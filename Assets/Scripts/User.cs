@@ -23,7 +23,7 @@ public class User : MonoBehaviour
     private void Start()
     {
         drawing = FindObjectOfType<Drawing>();
-        PaintColor = Color.red;
+        PaintColor = new Color(0.25f,0.83f,0.95f);
         FindObjectOfType<UIManager>().UpdatePencilSizeColor(PaintColor);
     }
     private void Update()
