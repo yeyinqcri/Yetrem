@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public Camera renderCamera;
     public GameObject PencilSizeContainer;
     public GameObject PauseOption;
+    public GameObject SaveToGalleryPanel;
+    public GameObject ContinuePanel;
 
     public string ActionOnExit { get; set; }
 
@@ -29,6 +31,11 @@ public class UIManager : MonoBehaviour
         {
             FindObjectOfType<User>().IsPaused = true;
             ExitMenu.SetActive(true);
+            if(PauseMenuPanel.activeInHierarchy)
+                TogglePauseMenu();
+
+            SaveToGalleryPanel.SetActive(false);
+            ContinuePanel.SetActive(false);
         }
     }
 
@@ -60,6 +67,12 @@ public class UIManager : MonoBehaviour
     public void TogglePauseMenu()
     {
         PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
+        if (PauseMenuPanel.activeInHierarchy)
+        {
+            ExitMenu.SetActive(false);
+            SaveToGalleryPanel.SetActive(false);
+            ContinuePanel.SetActive(false);
+        }
 
         TogglePauseButton();
         FindObjectOfType<User>().IsPaused = !FindObjectOfType<User>().IsPaused;

@@ -727,9 +727,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 29397826}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 104287315}
+        m_MethodName: TogglePauseMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -962,6 +962,8 @@ MonoBehaviour:
   renderCamera: {fileID: 1912584896}
   PencilSizeContainer: {fileID: 212852343}
   PauseOption: {fileID: 664256837}
+  SaveToGalleryPanel: {fileID: 1669834786}
+  ContinuePanel: {fileID: 1140324204}
 --- !u!4 &104287316
 Transform:
   m_ObjectHideFlags: 0
@@ -8872,7 +8874,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 29397826}
+      - m_Target: {fileID: 1140324204}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -8881,11 +8883,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1140324204}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 104287315}
+        m_MethodName: TogglePauseMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9291,7 +9293,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 29397826}
+      - m_Target: {fileID: 1140324204}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -9300,11 +9302,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1140324204}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 104287315}
+        m_MethodName: TogglePauseMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
