@@ -6,5 +6,5 @@
 ### Drawing game made in Unity3D
 
 <p align="center">
-	<img src="https://i.imgur.com/oJ7581q.gif" alt="Yetrem">
+	<img src="https://imgur.com/i3miuFS.gif" alt="Yetrem">
 </p>
