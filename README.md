@@ -1,4 +1,4 @@
 # Yetrem
 <p align="center">
-	<img src="https://imgur.com/i3miuFS.gif" alt="Yetrem">
+	<img src="https://i.imgur.com/9sh3g4Q.gif" alt="Yetrem">
 </p>
