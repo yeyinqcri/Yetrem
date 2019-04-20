@@ -26,7 +26,7 @@ public class AdManager : MonoBehaviour
     }
 
 
-    private void RequestInterstitial()
+    public void RequestInterstitial()
     {
 #if UNITY_ANDROID
         string adUnitId = "ca-app-pub-3940256099942544/1033173712";

@@ -58,7 +58,9 @@ public class UIManager : MonoBehaviour
 
     public void ExitToMainMenu()
     {
+        FindObjectOfType<AdManager>().ShowInterstitial();
         levelManager.LoadLevel(0);
+        FindObjectOfType<AdManager>().RequestInterstitial();
     }
 
     public void SaveCurrentPictureToGallery()

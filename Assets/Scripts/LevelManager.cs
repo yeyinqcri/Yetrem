@@ -35,8 +35,6 @@ public class LevelManager : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        FindObjectOfType<AdManager>().ShowInterstitial();
-
         if (SceneManager.GetActiveScene().buildIndex == 1)
             FindObjectOfType<GameManager>().SetNewPicture();
     }
