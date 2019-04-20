@@ -43,6 +43,13 @@ public class AdManager : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         this.interstitial.LoadAd(request);
+
+        this.interstitial.OnAdClosed += Interstitial_OnAdClosed;
+    }
+
+    private void Interstitial_OnAdClosed(object sender, System.EventArgs e)
+    {
+        RequestInterstitial();
     }
 
     public void ShowInterstitial()

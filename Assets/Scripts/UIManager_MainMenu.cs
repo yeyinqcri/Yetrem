@@ -114,6 +114,8 @@ public class UIManager_MainMenu : MonoBehaviour
         {
             FindObjectOfType<GameManager>().SaveGaleryToDevice();
             PlayerPrefs.SetString("language", FindObjectOfType<GameManager>().Language);
+
+            gameManager.GetComponent<AdManager>().ShowInterstitial();
             Application.Quit();
         }
     }

@@ -60,7 +60,6 @@ public class UIManager : MonoBehaviour
     {
         FindObjectOfType<AdManager>().ShowInterstitial();
         levelManager.LoadLevel(0);
-        FindObjectOfType<AdManager>().RequestInterstitial();
     }
 
     public void SaveCurrentPictureToGallery()
