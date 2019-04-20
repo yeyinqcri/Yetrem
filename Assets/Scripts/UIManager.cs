@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject PauseMenuPanel;
     public GameObject ExitMenu;
     public Camera renderCamera;
     public GameObject PencilSizeContainer;
-    public GameObject PauseOption;
     public GameObject SaveToGalleryPanel;
     public GameObject ContinuePanel;
 
@@ -22,7 +20,6 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
-        PauseOption.GetComponent<Image>().color = Color.white;
     }
 
     private void Update()
@@ -31,8 +28,6 @@ public class UIManager : MonoBehaviour
         {
             FindObjectOfType<User>().IsPaused = true;
             ExitMenu.SetActive(true);
-            if(PauseMenuPanel.activeInHierarchy)
-                TogglePauseMenu();
 
             SaveToGalleryPanel.SetActive(false);
             ContinuePanel.SetActive(false);
@@ -63,28 +58,6 @@ public class UIManager : MonoBehaviour
     public void ExitToMainMenu()
     {
         levelManager.LoadLevel(0);
-    }
-    public void TogglePauseMenu()
-    {
-        PauseMenuPanel.SetActive(!PauseMenuPanel.activeInHierarchy);
-        if (PauseMenuPanel.activeInHierarchy)
-        {
-            ExitMenu.SetActive(false);
-            SaveToGalleryPanel.SetActive(false);
-            ContinuePanel.SetActive(false);
-        }
-
-        TogglePauseButton();
-        FindObjectOfType<User>().IsPaused = !FindObjectOfType<User>().IsPaused;
-    }
-
-    public void TogglePauseButton()
-    {
-        pauseOn = !pauseOn;
-        if (!pauseOn)
-            PauseOption.GetComponent<Image>().color = Color.white;
-        else
-            PauseOption.GetComponent<Image>().color = new Color(0.6f, 1, 0.6f);
     }
 
     public void SaveCurrentPictureToGallery()
@@ -135,4 +108,5 @@ public class UIManager : MonoBehaviour
                 PencilSizeContainer.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
         }
     }
+
 }

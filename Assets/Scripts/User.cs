@@ -88,4 +88,8 @@ public class User : MonoBehaviour
         else
             eraserPanel.color = Color.white;
     }
+    public void TogglePausedState()
+    {
+        IsPaused = !IsPaused;
+    }
 }
