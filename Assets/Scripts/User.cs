@@ -23,7 +23,7 @@ public class User : MonoBehaviour
     private void Start()
     {
         drawing = FindObjectOfType<Drawing>();
-        PaintColor = new Color(0.25f,0.83f,0.95f);
+        PaintColor = new Color(128,0,0);
         FindObjectOfType<UIManager>().UpdatePencilSizeColor(PaintColor);
     }
     private void Update()
@@ -70,9 +70,13 @@ public class User : MonoBehaviour
         }
     }
 
-    public void ChangeColor(GameObject clickedColor)
+    public void ChangeColor(string rgb)
     {
-        PaintColor = clickedColor.GetComponent<Image>().color;
+        int r = int.Parse(rgb.Substring(0, 3));
+        int g = int.Parse(rgb.Substring(3, 3));
+        int b = int.Parse(rgb.Substring(6, 3));
+
+        PaintColor = new Color(r/255F,g / 255F, b / 255F);
         FindObjectOfType<UIManager>().UpdatePencilSizeColor(PaintColor);
     }
     public void ChangeSize(GameObject clickedSize)

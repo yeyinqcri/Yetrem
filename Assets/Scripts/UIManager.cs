@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject PencilSizeContainer;
     public GameObject SaveToGalleryPanel;
     public GameObject ContinuePanel;
+    public GameObject PencilColorList;
 
     public string ActionOnExit { get; set; }
 
@@ -108,5 +109,15 @@ public class UIManager : MonoBehaviour
                 PencilSizeContainer.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
         }
     }
+    public void HighlightPencil(GameObject p)
+    {
+        for(int i = 0; i < PencilColorList.transform.childCount; i++)
+        {
+            if (PencilColorList.transform.GetChild(i).name.Equals(p.name))
+                PencilColorList.transform.GetChild(i).transform.localScale = new Vector2(0.4f,1f);
+            else
+                PencilColorList.transform.GetChild(i).transform.localScale = new Vector2(0.2f, 0.8f);
 
+        }
+    }    
 }
