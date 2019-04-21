@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        FindObjectOfType<AdManager>().ShowInterstitial(false);
     }
 
     private void Update()
