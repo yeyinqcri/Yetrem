@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     public GameObject SaveToGalleryPanel;
     public GameObject ContinuePanel;
     public GameObject PencilColorList;
+    public GameObject SizeList;
+    public Text SizeText;
+    public GameObject SizeButton;
 
     public string ActionOnExit { get; set; }
 
@@ -22,6 +25,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        user = FindObjectOfType<User>();
         FindObjectOfType<AdManager>().ShowInterstitial(false);
     }
 
@@ -35,6 +39,16 @@ public class UIManager : MonoBehaviour
             SaveToGalleryPanel.SetActive(false);
             ContinuePanel.SetActive(false);
         }
+    }
+
+    public void ToggleSizeList()
+    {
+        SizeList.SetActive(!SizeList.activeInHierarchy);
+        user.IsPaused = SizeList.activeInHierarchy;
+        if (user.IsPaused)
+            SizeButton.GetComponent<Image>().color = new Color(236/255f,236/255f,236/255f);
+        else
+            SizeButton.GetComponent<Image>().color = Color.white;
     }
 
     public void UpdatePencilSizeColor(Color color)
@@ -113,6 +127,7 @@ public class UIManager : MonoBehaviour
             else
                 PencilSizeContainer.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
         }
+        SizeText.text = pencilSize.name;
     }
     public void HighlightPencil(GameObject p)
     {
