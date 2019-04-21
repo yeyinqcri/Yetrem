@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GoogleMobileAds.Api;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -52,13 +53,15 @@ public class UIManager : MonoBehaviour
     public void ExitGame()
     {
         FindObjectOfType<GameManager>().SaveGaleryToDevice();
+
         PlayerPrefs.SetString("language", FindObjectOfType<GameManager>().Language);
-        Application.Quit();
+
+        FindObjectOfType<AdManager>().ShowInterstitial(true);
     }
 
     public void ExitToMainMenu()
     {
-        FindObjectOfType<AdManager>().ShowInterstitial();
+        FindObjectOfType<AdManager>().ShowInterstitial(false);
         levelManager.LoadLevel(0);
     }
 

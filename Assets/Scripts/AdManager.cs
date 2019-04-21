@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class AdManager : MonoBehaviour
 {
-    private InterstitialAd interstitial;
+    public InterstitialAd interstitial;
     private string yetremId = "ca-app-pub-3345994290034136~3575736324";
     private string interstitialId = "ca-app-pub-3345994290034136/1024405233";
     private string testId = "";
+
+    private bool isExiting = false;
 
     private void Awake()
     {
@@ -49,11 +51,14 @@ public class AdManager : MonoBehaviour
 
     private void Interstitial_OnAdClosed(object sender, System.EventArgs e)
     {
+        if (isExiting)
+            Application.Quit();
         RequestInterstitial();
     }
 
-    public void ShowInterstitial()
+    public void ShowInterstitial(bool exit)
     {
+        this.isExiting = exit;
         if (this.interstitial.IsLoaded())
         {
             this.interstitial.Show();
