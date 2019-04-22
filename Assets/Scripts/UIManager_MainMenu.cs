@@ -637,6 +637,5 @@ public class UIManager_MainMenu : MonoBehaviour
                 x = 360f;
                 break;
         }
-        LanguageScrollPosY.GetComponent<RectTransform>().localPosition += new Vector3(0f, x, 0f);
     }
 }
