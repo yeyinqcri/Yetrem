@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
     public Text SizeText;
     public GameObject SizeButton;
 
+    private float CameraSize;
+    public Slider SliderZoom;
+    public GameObject ZoomingMenu;
+    public GameObject NotZoomingMenu;
+
     public string ActionOnExit { get; set; }
 
     private LevelManager levelManager;
@@ -27,6 +32,8 @@ public class UIManager : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         user = FindObjectOfType<User>();
         FindObjectOfType<AdManager>().ShowInterstitial(false);
+        CameraSize = Camera.main.orthographicSize;
+        Debug.Log(CameraSize);
     }
 
     private void Update()
@@ -140,4 +147,38 @@ public class UIManager : MonoBehaviour
 
         }
     }    
+
+    public void ChangeZoom()
+    {
+        CameraSize = SliderZoom.value;
+        Camera.main.orthographicSize = CameraSize;
+
+        if(CameraSize == 5f)
+        {
+            NotZoomingMenu.SetActive(true);
+            ZoomingMenu.SetActive(false);
+            Camera.main.transform.position = new Vector3(0f, 0f, -10f);
+        }
+        else
+        {
+            NotZoomingMenu.SetActive(false);
+            ZoomingMenu.SetActive(true);
+        }
+    }
+    public void MoveUp()
+    {
+        Camera.main.transform.position += new Vector3(0f,0.1f,0f);
+    }
+    public void MoveDown()
+    {
+        Camera.main.transform.position += new Vector3(0f, -0.1f, 0f);
+    }
+    public void MoveLeft()
+    {
+        Camera.main.transform.position += new Vector3(-0.1f,0f, 0f);
+    }
+    public void MoveRight()
+    {
+        Camera.main.transform.position += new Vector3(0.1f,0f, 0f);
+    }
 }
