@@ -38,6 +38,10 @@ public class User : MonoBehaviour
 
         if (isDrawing)
         {
+            foreach (CanvasUI o in FindObjectsOfType<CanvasUI>())
+                if (o.IsTouchOver)
+                    return;
+
             GameObject[] paintObjects = GameObject.FindGameObjectsWithTag("Paint");
             if (isErasing)
             {
