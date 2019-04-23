@@ -17,5 +17,8 @@
     "Game_ExitMenu_Return": "retourner",
     "Game_ExitMenu_MainMenu": "Menu Principal",
     "Game_ExitMenu_ExitGame": "quitte le jeu",
-    "Game_SaveToGallery_Text": "enregistrer le dessin?"
+    "Game_SaveToGallery_Text": "enregistrer le dessin?",
+    "Game_MainMenu_Prompt": "Sortir au menu principal?",
+    "Game_Export_Prompt": "Vous souhaitez exporter ce dessin sur votre appareil?",
+    "Game_Gallery_Prompt": "Voulez-vous enregistrer le dessin actuel?"
 }

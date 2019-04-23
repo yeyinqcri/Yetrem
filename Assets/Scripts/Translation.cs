@@ -20,4 +20,7 @@ public class Translation
     public string Game_ExitMenu_MainMenu;
     public string Game_ExitMenu_ExitGame;
     public string Game_SaveToGallery_Text;
+    public string Game_MainMenu_Prompt;
+    public string Game_Export_Prompt;
+    public string Game_Gallery_Prompt;
 }

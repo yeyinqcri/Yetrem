@@ -269,6 +269,21 @@ PrefabInstance:
       propertyPath: Game_SaveToGallery_Text
       value: 
       objectReference: {fileID: 1685293094}
+    - target: {fileID: 4279271552523608925, guid: d1519aa2206cb0147b514aa783b4f0f2,
+        type: 3}
+      propertyPath: Game_MainMenu_Prompt
+      value: 
+      objectReference: {fileID: 329408455}
+    - target: {fileID: 4279271552523608925, guid: d1519aa2206cb0147b514aa783b4f0f2,
+        type: 3}
+      propertyPath: Game_Export_Prompt
+      value: 
+      objectReference: {fileID: 1679958666}
+    - target: {fileID: 4279271552523608925, guid: d1519aa2206cb0147b514aa783b4f0f2,
+        type: 3}
+      propertyPath: Game_Gallery_Prompt
+      value: 
+      objectReference: {fileID: 1638898841}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1519aa2206cb0147b514aa783b4f0f2, type: 3}
 --- !u!1 &65254219

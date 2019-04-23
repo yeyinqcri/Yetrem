@@ -24,6 +24,9 @@ public class LanguageManager : MonoBehaviour
     public Text Game_ExitMenu_MainMenu;
     public Text Game_ExitMenu_ExitGame;
     public Text Game_SaveToGallery_Text;
+    public Text Game_MainMenu_Prompt;
+    public Text Game_Export_Prompt;
+    public Text Game_Gallery_Prompt;
 
     private GameManager gameManager;
 
@@ -93,5 +96,14 @@ public class LanguageManager : MonoBehaviour
 
         if (Game_SaveToGallery_Text != null)
             Game_SaveToGallery_Text.text = t.Game_SaveToGallery_Text;
+
+        if (Game_MainMenu_Prompt != null)
+            Game_MainMenu_Prompt.text = t.Game_MainMenu_Prompt;
+
+        if (Game_Export_Prompt != null)
+            Game_Export_Prompt.text = t.Game_Export_Prompt;
+
+        if (Game_Gallery_Prompt != null)
+            Game_Gallery_Prompt.text = t.Game_Gallery_Prompt;
     }
 }

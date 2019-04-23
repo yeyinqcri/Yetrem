@@ -17,5 +17,8 @@
     "Game_ExitMenu_Return": "Return",
     "Game_ExitMenu_MainMenu": "Main Menu",
     "Game_ExitMenu_ExitGame": "Exit Game",
-    "Game_SaveToGallery_Text": "Do You Want To Save The Current Drawing?"
+    "Game_SaveToGallery_Text": "Do You Want To Save The Current Drawing?",
+    "Game_MainMenu_Prompt": "Exit to main menu?",
+    "Game_Export_Prompt": "Do you want to export to your device this drawing?",
+    "Game_Gallery_Prompt": "Do you want to save the current drawing?"
 }
