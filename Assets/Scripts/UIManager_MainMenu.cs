@@ -66,7 +66,9 @@ public class UIManager_MainMenu : MonoBehaviour
 
         ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
         float posX = 0;
-        foreach (Sprite s in gameManager.GetGalleryPictures())
+        List<Sprite> auxArray = gameManager.GetGalleryPictures();
+        auxArray.Reverse();
+        foreach (Sprite s in auxArray)
         {
             GameObject instance = Instantiate(GalleryPictureTemplate, GalleryPicturesContainer.transform);
             instance.transform.GetChild(0).GetComponent<Image>().sprite = s;
@@ -392,7 +394,9 @@ public class UIManager_MainMenu : MonoBehaviour
 
         ConfigureGalleryUI(gameManager.GetGallerySize() < 1);
         float posX = 0;
-        foreach (Sprite s in gameManager.GetGalleryPictures())
+        List<Sprite> auxArray = gameManager.GetGalleryPictures();
+        auxArray.Reverse();
+        foreach (Sprite s in auxArray)
         {
             GameObject instance = Instantiate(GalleryPictureTemplate, GalleryPicturesContainer.transform);
             instance.transform.GetChild(0).GetComponent<Image>().sprite = s;
