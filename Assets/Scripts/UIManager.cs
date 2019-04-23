@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject SizeList;
     public Text SizeText;
     public GameObject SizeButton;
+    public GameObject PanelContainer;
 
     private float CameraSize;
     public Slider SliderZoom;
@@ -180,5 +181,15 @@ public class UIManager : MonoBehaviour
     public void MoveRight()
     {
         Camera.main.transform.position += new Vector3(0.1f,0f, 0f);
+    }
+
+    public bool IsAnyMenuShowing()
+    {
+        for(int i = 0; i < PanelContainer.transform.childCount; i++)
+        {
+            if (PanelContainer.transform.GetChild(i).gameObject.activeInHierarchy)
+                return true;
+        }
+        return false;
     }
 }

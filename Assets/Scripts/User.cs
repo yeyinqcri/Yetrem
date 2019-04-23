@@ -98,6 +98,6 @@ public class User : MonoBehaviour
     }
     public void TogglePausedState()
     {
-        IsPaused = !IsPaused;
+        IsPaused = FindObjectOfType<UIManager>().IsAnyMenuShowing();
     }
 }
