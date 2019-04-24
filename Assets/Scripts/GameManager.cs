@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadGalleryFromDevice();
         LoadLanguage();
+        LoadGalleryFromDevice();
     }
 
     public void SaveGaleryToDevice()

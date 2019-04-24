@@ -107,6 +107,7 @@ public class UIManager_MainMenu : MonoBehaviour
         LanguageScrollPosY.GetComponent<RectTransform>().localPosition += new Vector3(0f,x, 0f);
 
         LanguagePanel.SetActive(gameManager.FirstTimeRun);
+        UpdateCategoriesLanguage();
     }
 
 
